@@ -3,13 +3,14 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
-public class App {
+public class Lanzador {
     public static final String MSG_ERROR = "Se ha producido un error al ejecutar el comando";
-    public static final String[] COMANDOS = { "java", "-cp", "/home/debian/SUMA/suma/target/classes", "es.etg.dam.Suma", "2", "4" };
+    public static final String[] COMANDOS = { "java", "-cp", "suma/target/classes", "es.etg.dam.Suma", "2", "4" };
     
     public static void main(String[] args) {
         try {
             Process process = Runtime.getRuntime().exec(COMANDOS);
+            
             StringBuilder output = new StringBuilder();
 
             BufferedReader reader = new BufferedReader(new InputStreamReader(process.getInputStream()));
